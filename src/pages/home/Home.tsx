@@ -15,5 +15,5 @@ export const Home = () => {
     return <InfoCard key={data.key} {...(data as InfoCardProps)} />;
   });
 
-  return <div className="bg-gray-300  grid grid-cols-1 gap-3 p-5">{cards}</div>;
+  return <div className="grid grid-cols-1 gap-3 p-5 bg-slate-200">{cards}</div>;
 };
