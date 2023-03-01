@@ -1,10 +1,15 @@
-import { DetailItemProps } from "@/interfaces/DetailItemProps";
+import { DetailItemModel } from "@/interfaces/DetailItemProps";
 import { ExpandLess, ExpandMore } from "@mui/icons-material";
 import { Collapse, List, ListItemButton, ListItemText } from "@mui/material";
 import * as cn from "chinese-numbering";
 import { useState } from "react";
 
-export const DetailItem = ({ level, children, index }: DetailItemProps) => {
+interface DetailItemProps extends DetailItemModel {
+  level: number;
+  index: number;
+}
+
+export const DetailItem = ({ children, index, level }: DetailItemProps) => {
   const types = ["chinese", "arabic"];
   const [open, setOpen] = useState(false);
 
@@ -39,9 +44,10 @@ export const DetailItem = ({ level, children, index }: DetailItemProps) => {
           <List component="div" disablePadding>
             {children.map((detailItem, index) => (
               <DetailItem
-                key={Math.pow(10, detailItem.level) + index}
-                {...detailItem}
+                key={detailItem._id}
                 index={index}
+                level={level + 1}
+                {...detailItem}
               />
             ))}
           </List>

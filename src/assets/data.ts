@@ -1,7 +1,7 @@
-import { DetailItemProps } from "@/interfaces/DetailItemProps";
+import { DetailItemModel } from "@/interfaces/DetailItemProps";
 
 export function getDetailDatas() {
-  const datas: DetailItemProps[] = [
+  const datas: DetailItemModel[] = [
     {
       type: "汉字",
       level: 0,

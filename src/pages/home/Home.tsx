@@ -1,6 +1,15 @@
+import { TitleContextType } from "@/App";
+import { useEffect } from "react";
+import { useOutletContext } from "react-router-dom";
 import { InfoCard, InfoCardProps } from "./components/InfoCard";
 
 export const Home = () => {
+  const [, setTitle] = useOutletContext<TitleContextType>();
+
+  useEffect(() => {
+    setTitle("首页");
+  }, []);
+
   let cur = 0;
   const datas = Array.from({ length: 10 }, () => {
     return {

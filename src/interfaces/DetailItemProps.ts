@@ -1,6 +1,4 @@
-export interface DetailItemProps {
-  type: string;
-  level: number;
-  index: number;
-  children: DetailItemProps[];
+export interface DetailItemModel {
+  _id: string;
+  children: DetailItemModel[];
 }

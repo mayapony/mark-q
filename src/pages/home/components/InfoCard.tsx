@@ -7,7 +7,7 @@ export type InfoCardProps = {
   createDate: string;
 };
 
-export const InfoCard = ({ title, status, createDate }: InfoCardProps) => {
+export const InfoCard = ({ title, createDate }: InfoCardProps) => {
   const navigate = useNavigate();
 
   return (
@@ -23,16 +23,11 @@ export const InfoCard = ({ title, status, createDate }: InfoCardProps) => {
           <Button
             variant="outlined"
             size="small"
-            onClick={() => navigate("/detail")}
+            onClick={() => navigate(`/detail/${title}`)}
           >
             查看
           </Button>
         </div>
-        <div
-          className={`h-4 w-4 -right-1 -top-1 absolute rounded-full ${
-            !status ? "bg-red-600" : "bg-blue-500"
-          }`}
-        />
       </div>
     </div>
   );
